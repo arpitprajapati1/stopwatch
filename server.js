@@ -2,7 +2,7 @@ const { urlencoded } = require("express");
 const path = require('path');
 const express = require("express");
 const app = express();
-
+const port = process.env.port;
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
 
@@ -26,6 +26,6 @@ app.get('/',(req,res)=>{
     console.log("this is end point");
 })
 
-app.listen(8000,()=>{
+app.listen(port,()=>{
     console.log('Running on server https://localhost:8000 ......');
 })
